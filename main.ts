@@ -1,11 +1,9 @@
-import { writeFileSync, mkdirSync } from 'node:fs';
+import { writeFileSync, mkdirSync, existsSync } from 'node:fs';
 
 const count = 73;
 
-try {
-  mkdirSync('/output', { recursive: true });
-} catch {
+if (!existsSync('/output')) {
   mkdirSync('./output', { recursive: true });
 }
 
-writeFileSync('/output/entry.txt', String(count));
+writeFileSync(existsSync('/output') ? '/output/entry.txt' : './output/entry.txt', String(count));
