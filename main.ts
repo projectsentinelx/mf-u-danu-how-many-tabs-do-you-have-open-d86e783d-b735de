@@ -1,6 +1,6 @@
 import { writeFileSync, mkdirSync } from 'node:fs';
 
-const count = 47;
+const count = 73;
 
 try {
   mkdirSync('/output', { recursive: true });
